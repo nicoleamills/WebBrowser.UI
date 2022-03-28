@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WebBrowser.UI
 {
-    public partial class Form1 : Form
+    public partial class MainBrowser : Form
     {
-        public Form1()
+        public MainBrowser()
         {
             InitializeComponent();
         }
@@ -84,6 +84,11 @@ namespace WebBrowser.UI
                 tabPage1.Text=url;
                 webBrowser1.Navigate(url);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
