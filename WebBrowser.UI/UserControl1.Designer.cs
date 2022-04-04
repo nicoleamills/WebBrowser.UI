@@ -38,9 +38,9 @@
             this.searchBtn = new System.Windows.Forms.ToolStripButton();
             this.bookmarkBtn = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -106,7 +106,7 @@
             // 
             this.searchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(800, 25);
+            this.searchBox.Size = new System.Drawing.Size(700, 25);
             this.searchBox.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // searchBtn
@@ -138,18 +138,6 @@
             this.tabControl1.Size = new System.Drawing.Size(950, 616);
             this.tabControl1.TabIndex = 3;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.webBrowser2);
-            this.tabPage1.Controls.Add(this.webBrowser1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(942, 590);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "New Tab";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,6 +157,18 @@
             this.webBrowser2.Size = new System.Drawing.Size(936, 584);
             this.webBrowser2.TabIndex = 1;
             this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted_1);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.webBrowser2);
+            this.tabPage1.Controls.Add(this.webBrowser1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(942, 590);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "New Tab";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // PageControl
             // 
@@ -200,7 +200,7 @@
         private System.Windows.Forms.ToolStripButton bookmarkBtn;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

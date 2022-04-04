@@ -15,7 +15,6 @@ namespace WebBrowser.UI
         public MainBrowser()
         {
             InitializeComponent();
-            webBrowser1.Navigate("www.google.com");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -44,7 +43,7 @@ namespace WebBrowser.UI
         }
 
         //private void toolStripTextBox1_Click(object sender, KeyEventArgs e)
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        /*private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -55,7 +54,7 @@ namespace WebBrowser.UI
                     webBrowser1.Navigate(url);
                 }
             }
-        }
+        }*/
 
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -86,38 +85,29 @@ namespace WebBrowser.UI
             MessageBox.Show("Browser developed by Nicole Mills @nam0068");
         }
 
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            string url = textBox1.Text;
-            if (Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
-            {
-                tabPage1.Text=url;
-                webBrowser1.Navigate(url);
-            }
-        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        public void SetTabs()
-        {
-            tabControl1.SelectedTab.Text = PageControl.SetTab;
-        }
-
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TabPage tabpage = new TabPage();
-            tabpage.Text = "New File";
+            tabpage.Text = "New Tab";
             tabControl1.Controls.Add(tabpage);
             PageControl webbrowser = new PageControl();
             webbrowser.Parent = tabpage;
             webbrowser.Dock = DockStyle.Fill;
-            webBrowser1.Navigate("www.google.com");
         }
 
         private void textBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
