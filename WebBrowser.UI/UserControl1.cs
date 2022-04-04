@@ -97,5 +97,10 @@ namespace WebBrowser.UI
                 webBrowser2.Navigate(url);
             }
         }
+
+        private void searchBox_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

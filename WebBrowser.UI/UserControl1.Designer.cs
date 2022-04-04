@@ -38,9 +38,9 @@
             this.searchBtn = new System.Windows.Forms.ToolStripButton();
             this.bookmarkBtn = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,6 +108,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(700, 25);
             this.searchBox.Click += new System.EventHandler(this.textBox1_Click);
+            this.searchBox.Paint += new System.Windows.Forms.PaintEventHandler(this.searchBox_Paint);
             // 
             // searchBtn
             // 
@@ -138,26 +139,6 @@
             this.tabControl1.Size = new System.Drawing.Size(950, 616);
             this.tabControl1.TabIndex = 3;
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(936, 584);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
-            // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser2.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(936, 584);
-            this.webBrowser2.TabIndex = 1;
-            this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted_1);
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.webBrowser2);
@@ -169,6 +150,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser2.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.Size = new System.Drawing.Size(936, 584);
+            this.webBrowser2.TabIndex = 1;
+            this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted_1);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(936, 584);
+            this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // PageControl
             // 

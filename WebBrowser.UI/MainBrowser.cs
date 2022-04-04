@@ -59,8 +59,7 @@ namespace WebBrowser.UI
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
         {
 
-            // Page control object
-            PageControl newTabCtrl = new PageControl();
+            
 
            
         }
@@ -111,5 +110,13 @@ namespace WebBrowser.UI
         {
 
         }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+        }
+
+
+
     }
 }
