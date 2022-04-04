@@ -15,6 +15,7 @@ namespace WebBrowser.UI
         public MainBrowser()
         {
             InitializeComponent();
+            webBrowser1.Navigate("www.google.com");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -56,6 +57,15 @@ namespace WebBrowser.UI
             }
         }
 
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            // Page control object
+            PageControl newTabCtrl = new PageControl();
+
+           
+        }
+
         private void webBrowser1_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
 
@@ -87,6 +97,27 @@ namespace WebBrowser.UI
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetTabs()
+        {
+            tabControl1.SelectedTab.Text = PageControl.SetTab;
+        }
+
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabPage tabpage = new TabPage();
+            tabpage.Text = "New File";
+            tabControl1.Controls.Add(tabpage);
+            PageControl webbrowser = new PageControl();
+            webbrowser.Parent = tabpage;
+            webbrowser.Dock = DockStyle.Fill;
+            webBrowser1.Navigate("www.google.com");
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
         {
 
         }
