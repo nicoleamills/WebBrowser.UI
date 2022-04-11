@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -80,7 +81,33 @@ namespace WebBrowser.UI
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
+            // add to bookmarks
+            var bookmark = new BookmarksItem();
+            bookmark.URL = searchBox.Text;
+            bookmark.Title = webBrowser1.DocumentTitle;
 
+            // get bookmarks to compare
+            var items = BookmarkManager.GetItems();
+
+            // if database isn't empty, check to see if URL exists
+            int count = 0;
+            foreach (var item in items)
+            {
+                if (item.URL.Contains(searchBox.Text))
+                {
+                    count++;
+                }
+            }
+            if (count == 0)
+            {
+                // if not found, add bookmark
+                BookmarkManager.AddItem(bookmark);
+            }
+            else
+            {
+                // if found, show pop up message
+                MessageBox.Show("OOPS! ALREADY BOOKMARKED");
+            }
         }
 
         private void webBrowser2_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)

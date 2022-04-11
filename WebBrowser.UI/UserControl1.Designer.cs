@@ -36,7 +36,7 @@
             this.homeBtn = new System.Windows.Forms.ToolStripButton();
             this.searchBox = new System.Windows.Forms.ToolStripTextBox();
             this.searchBtn = new System.Windows.Forms.ToolStripButton();
-            this.bookmarkBtn = new System.Windows.Forms.ToolStripButton();
+            this.bookmarksBtn = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
@@ -55,7 +55,7 @@
             this.homeBtn,
             this.searchBox,
             this.searchBtn,
-            this.bookmarkBtn});
+            this.bookmarksBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(988, 25);
@@ -120,15 +120,15 @@
             this.searchBtn.Text = "toolStripButton5";
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // bookmarkBtn
+            // bookmarksBtn
             // 
-            this.bookmarkBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bookmarkBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkBtn.Image")));
-            this.bookmarkBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bookmarkBtn.Name = "bookmarkBtn";
-            this.bookmarkBtn.Size = new System.Drawing.Size(23, 22);
-            this.bookmarkBtn.Text = "toolStripButton6";
-            this.bookmarkBtn.Click += new System.EventHandler(this.toolStripButton6_Click);
+            this.bookmarksBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bookmarksBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookmarksBtn.Image")));
+            this.bookmarksBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bookmarksBtn.Name = "bookmarksBtn";
+            this.bookmarksBtn.Size = new System.Drawing.Size(23, 22);
+            this.bookmarksBtn.Text = "toolStripButton6";
+            this.bookmarksBtn.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // tabControl1
             // 
@@ -198,7 +198,7 @@
         private System.Windows.Forms.ToolStripButton homeBtn;
         private System.Windows.Forms.ToolStripTextBox searchBox;
         private System.Windows.Forms.ToolStripButton searchBtn;
-        private System.Windows.Forms.ToolStripButton bookmarkBtn;
+        private System.Windows.Forms.ToolStripButton bookmarksBtn;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.WebBrowser webBrowser2;
