@@ -35,5 +35,30 @@ namespace WebBrowser.UI
                 listBox1.Items.Add(string.Format("{0} ({1})", item.Title, item.URL));
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // search if enter key is pressed
+            if (e.KeyCode == Keys.Enter)
+            {
+                bookSrchBtn_Click(sender, e);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Search for items inside bookmark manager
+            var items = BookmarkManager.GetItems();
+            listBox1.Items.Clear();
+            foreach (var item in items)
+            {
+                bool result = item.Title.IndexOf(searchBox.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                bool result2 = item.URL.IndexOf(searchBox.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                if (result == true || result2 == true)
+                {
+                    listBox1.Items.Add(string.Format("{0} ({1})", item.Title, item.URL));
+                }
+            }
+        }
     }
 }
