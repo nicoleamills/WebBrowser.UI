@@ -129,5 +129,51 @@ namespace WebBrowser.UI
         {
 
         }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void webBrowser2_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            try
+            {
+                // progress bar values
+                progressBar.Value = (int)e.CurrentProgress;
+                progressBar.Maximum = (int)e.MaximumProgress;
+            }
+            catch
+            {
+
+            }
+            // loading
+            if (progressBar.Value < e.MaximumProgress)
+            {
+                statusLbl.Text = "Loading...";
+            }
+            // done loading
+            else
+            {
+                statusLbl.Text = "Complete";
+            }
+        }
+
+
     }
 }

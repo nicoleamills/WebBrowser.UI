@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageControl));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.backBtn = new System.Windows.Forms.ToolStripButton();
@@ -42,9 +43,9 @@
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.statusLbl = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,7 +141,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(950, 616);
+            this.tabControl1.Size = new System.Drawing.Size(988, 641);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -150,7 +151,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(942, 590);
+            this.tabPage1.Size = new System.Drawing.Size(980, 615);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -161,7 +162,7 @@
             this.webBrowser2.Location = new System.Drawing.Point(3, 3);
             this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(936, 584);
+            this.webBrowser2.Size = new System.Drawing.Size(974, 609);
             this.webBrowser2.TabIndex = 1;
             this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted_1);
             // 
@@ -171,7 +172,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(3, 3);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(936, 584);
+            this.webBrowser1.Size = new System.Drawing.Size(974, 609);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
@@ -182,39 +183,37 @@
             this.statusStrip1.Size = new System.Drawing.Size(988, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(0, 692);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(247, 23);
-            this.progressBar1.TabIndex = 5;
+            this.progressBar.Location = new System.Drawing.Point(0, 692);
+            this.progressBar.Maximum = 10;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(247, 23);
+            this.progressBar.TabIndex = 5;
+            this.progressBar.Click += new System.EventHandler(this.progressBar1_Click);
             // 
-            // label1
+            // statusLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(253, 701);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.statusLbl.AutoSize = true;
+            this.statusLbl.Location = new System.Drawing.Point(253, 701);
+            this.statusLbl.Name = "statusLbl";
+            this.statusLbl.Size = new System.Drawing.Size(37, 13);
+            this.statusLbl.TabIndex = 6;
+            this.statusLbl.Text = "Status";
+            this.statusLbl.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // timer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(253, 701);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // PageControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.statusLbl);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
@@ -245,8 +244,8 @@
         private System.Windows.Forms.WebBrowser webBrowser2;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label statusLbl;
+        private System.Windows.Forms.Timer timer1;
     }
 }
