@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
 
-
-
 namespace WebBrowser.UI
 {
     public partial class BookmarkManagerForm : Form
@@ -38,10 +36,15 @@ namespace WebBrowser.UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
             // search if enter key is pressed
             if (e.KeyCode == Keys.Enter)
             {
-                bookSrchBtn_Click(sender, e);
+                button1_Click(sender, e);
             }
         }
 
