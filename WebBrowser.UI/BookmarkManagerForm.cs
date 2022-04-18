@@ -66,6 +66,17 @@ namespace WebBrowser.UI
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            // Delete item from bookmark
+            try
+            {
+                string item = listBox1.GetItemText(listBox1.SelectedItem);
+                BookmarkManager.DeleteBookmark(item);
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+            catch
+            {
+                MessageBox.Show("Error: Nothing was selected to delete.");
+            }
 
         }
 
