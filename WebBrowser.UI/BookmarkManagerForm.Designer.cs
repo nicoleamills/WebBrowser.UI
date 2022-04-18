@@ -31,6 +31,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -44,7 +45,7 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(110, 101);
+            this.searchBox.Location = new System.Drawing.Point(110, 104);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(263, 20);
             this.searchBox.TabIndex = 1;
@@ -52,19 +53,30 @@
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(408, 97);
+            this.searchBtn.Location = new System.Drawing.Point(379, 101);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(242, 23);
+            this.searchBtn.Size = new System.Drawing.Size(147, 23);
             this.searchBtn.TabIndex = 2;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(532, 101);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(118, 23);
+            this.deleteBtn.TabIndex = 3;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // BookmarkManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.listBox1);
@@ -81,5 +93,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }
