@@ -1,6 +1,6 @@
 ﻿namespace WebBrowser.UI
 {
-    partial class PageControl
+    partial class UserControl1
     {
         /// <summary> 
         /// Required designer variable.
@@ -219,7 +219,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "PageControl";
             this.Size = new System.Drawing.Size(988, 714);
-            this.Load += new System.EventHandler(this.PageControl_Load);
+            this.Load += new System.EventHandler(this.UserControl1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

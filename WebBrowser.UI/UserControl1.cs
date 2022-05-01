@@ -11,11 +11,11 @@ using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
-    public partial class PageControl : UserControl
+    public partial class UserControl1 : UserControl
     {
 
 
-        public PageControl()
+        public UserControl1()
         {
         
 
@@ -24,7 +24,7 @@ namespace WebBrowser.UI
 
         }
 
-        private void PageControl_Load(object sender, EventArgs e)
+        private void UserControl1_Load(object sender, EventArgs e)
         {
 
         }

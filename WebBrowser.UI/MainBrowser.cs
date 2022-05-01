@@ -93,12 +93,19 @@ namespace WebBrowser.UI
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabPage tabpage = new TabPage();
-            tabpage.Text = "New Tab";
-            tabControl1.Controls.Add(tabpage);
-            PageControl webbrowser = new PageControl();
-            webbrowser.Parent = tabpage;
-            webbrowser.Dock = DockStyle.Fill;
+            // Create new tab page
+            TabPage newTab = new TabPage(string.Format("TAB {0}", tab));
+
+            // Set tab location
+            int lastTab = tabControl1.TabCount - 1;
+
+            // Insert tab before the + tab
+            tabControl1.TabPages.Insert(lastTab, newTab);
+
+            // Add page control
+            UserControl1 newTabCtrl = new UserControl1();
+            newTabCtrl.Dock = DockStyle.Fill;
+            newTab.Controls.Add(newTabCtrl);
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -132,7 +139,8 @@ namespace WebBrowser.UI
 
         private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // Clear History
+            HistoryManager.ClearHistory();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
