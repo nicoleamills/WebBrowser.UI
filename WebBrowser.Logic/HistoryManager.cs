@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebBrowser.Data.HistoryDataSetTableAdapters;
+using System.Globalization;
 
 
 namespace WebBrowser.Logic
@@ -37,6 +38,35 @@ namespace WebBrowser.Logic
             return results;
         }
 
+        // Delete item from db
+        public static void DeleteHistory(string item)
+        {
+            var adapter = new HistoryTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                string checkItem = string.Format("[{0}] {1} ({2})", row.Date, row.Title, row.URL);
+
+                // Check if database match item
+                if (checkItem == item)
+                {
+                    adapter.Delete(row.Id, row.URL, row.Title, row.Date.ToString());
+                }
+            }
+        }
+
+        // Clear history from db
+        public static void ClearHistory()
+        {
+            var adapter = new HistoryTableAdapter();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                adapter.Delete(row.Id, row.URL, row.Title, row.Date.ToString());
+            }
+        }
 
     }
 }

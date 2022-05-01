@@ -50,6 +50,7 @@
             this.histSearchBox.Name = "histSearchBox";
             this.histSearchBox.Size = new System.Drawing.Size(163, 20);
             this.histSearchBox.TabIndex = 1;
+            this.histSearchBox.TextChanged += new System.EventHandler(this.histSearchBox_TextChanged);
             // 
             // histSearchBtn
             // 
@@ -59,6 +60,7 @@
             this.histSearchBtn.TabIndex = 2;
             this.histSearchBtn.Text = "Search";
             this.histSearchBtn.UseVisualStyleBackColor = true;
+            this.histSearchBtn.Click += new System.EventHandler(this.histSearchBtn_Click);
             // 
             // histDeleteBtn
             // 
@@ -68,6 +70,7 @@
             this.histDeleteBtn.TabIndex = 3;
             this.histDeleteBtn.Text = "Delete";
             this.histDeleteBtn.UseVisualStyleBackColor = true;
+            this.histDeleteBtn.Click += new System.EventHandler(this.histDeleteBtn_Click);
             // 
             // histClearBtn
             // 
@@ -77,6 +80,7 @@
             this.histClearBtn.TabIndex = 4;
             this.histClearBtn.Text = "Clear History";
             this.histClearBtn.UseVisualStyleBackColor = true;
+            this.histClearBtn.Click += new System.EventHandler(this.histClearBtn_Click);
             // 
             // HistoryManagerForm
             // 

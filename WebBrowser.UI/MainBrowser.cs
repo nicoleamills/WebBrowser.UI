@@ -129,5 +129,15 @@ namespace WebBrowser.UI
             var bookmarks = new BookmarkManagerForm();
             bookmarks.ShowDialog();
         }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
