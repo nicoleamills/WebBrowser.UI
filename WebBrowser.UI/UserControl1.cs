@@ -13,6 +13,7 @@ namespace WebBrowser.UI
 {
     public partial class UserControl1 : UserControl
     {
+        public static string SetTab = "";
 
 
         public UserControl1()
@@ -36,7 +37,11 @@ namespace WebBrowser.UI
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            
+            SetTab = webBrowser1.DocumentTitle;
+            if (System.Windows.Forms.Application.OpenForms["MainBrowser"] != null)
+            {
+                (System.Windows.Forms.Application.OpenForms["MainBrowser"] as MainBrowser).SetTabs();
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)

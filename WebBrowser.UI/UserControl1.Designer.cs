@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.backBtn = new System.Windows.Forms.ToolStripButton();
             this.forwardBtn = new System.Windows.Forms.ToolStripButton();

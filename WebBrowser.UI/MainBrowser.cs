@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
     public partial class MainBrowser : Form
     {
+        int tab = 2;
         public MainBrowser()
         {
             InitializeComponent();
@@ -93,19 +95,12 @@ namespace WebBrowser.UI
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Create new tab page
-            TabPage newTab = new TabPage(string.Format("TAB {0}", tab));
-
-            // Set tab location
-            int lastTab = tabControl1.TabCount - 1;
-
-            // Insert tab before the + tab
-            tabControl1.TabPages.Insert(lastTab, newTab);
-
-            // Add page control
-            UserControl1 newTabCtrl = new UserControl1();
-            newTabCtrl.Dock = DockStyle.Fill;
-            newTab.Controls.Add(newTabCtrl);
+            TabPage tabpage = new TabPage();
+            tabpage.Text = "New Tab";
+            tabControl1.Controls.Add(tabpage);
+            UserControl1 webbrowser = new UserControl1();
+            webbrowser.Parent = tabpage;
+            webbrowser.Dock = DockStyle.Fill;
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -147,5 +142,11 @@ namespace WebBrowser.UI
         {
 
         }
+
+        public void SetTabs()
+        {
+            tabControl1.SelectedTab.Text = UserControl1.SetTab;
+        }
+
     }
 }
